@@ -1,7 +1,4 @@
-const envPath = path.resolve(__dirname, '../../.env');
-require("dotenv").config({ path: envPath });
-
-const SERVER_PORT_API = process.env.SERVER_PORT_API;
+const SERVER_PORT_API = 3000;
 
 class IssueFilter extends React.Component {
   render() {
