@@ -16,6 +16,7 @@
   "homepage": "git+https://github.com/jorfernan/issueTracker.git",
   "dependencies": {
     "apollo-server-express": "^2.3.1",
+    "dotenv": "^16.1.4",
     "express": "^4.16.4",
     "graphql": "^0.13.2",
     "mongodb": "^3.1.10",
