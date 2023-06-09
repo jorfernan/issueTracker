@@ -9,7 +9,6 @@ const path = require('path');
 
 let aboutMessage = "Issue Tracker API v1.0";
 
-
 const envPath = path.resolve(__dirname, '../.env');
 require("dotenv").config({ path: envPath });
 

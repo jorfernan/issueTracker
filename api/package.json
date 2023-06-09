@@ -13,7 +13,7 @@
   },
   "author": "jorfernan1995@gmail.com",
   "license": "ISC",
-  "homepage": "https://github.com/vasansr/pro-mern-stack-2",
+  "homepage": "git+https://github.com/jorfernan/issueTracker.git",
   "dependencies": {
     "apollo-server-express": "^2.3.1",
     "express": "^4.16.4",

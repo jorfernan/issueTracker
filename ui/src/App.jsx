@@ -1,3 +1,8 @@
+const envPath = path.resolve(__dirname, '../../.env');
+require("dotenv").config({ path: envPath });
+
+const SERVER_PORT_API = process.env.SERVER_PORT_API;
+
 class IssueFilter extends React.Component {
   render() {
     return <div>This is a placeholder for the issue filter</div>;
@@ -12,7 +17,7 @@ function jsonDateReviver(key, value) {
 
 async function graphQLFetch(query, variables = {}) {
   try {
-    const response = await fetch("/graphql", {
+    const response = await fetch(`http://localhost:${SERVER_PORT_API}/graphql`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query, variables }),

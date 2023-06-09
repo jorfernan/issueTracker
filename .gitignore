@@ -1,3 +1,4 @@
-node_modules/
 .env
 ui/public/App.js
+api/node_modules
+ui/node_modules

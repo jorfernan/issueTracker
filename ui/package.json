@@ -1,0 +1,29 @@
+{
+  "name": "pro-mern-stack-2-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -w uiserver.js uiserver.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "babel src --out-dir public",
+    "watch": "babel src --out-dir public --watch --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorfernan/issueTracker.git"
+  },
+  "author": "jorfernan1995@gmail.com",
+  "license": "ISC",
+  "homepage": "https://github.com/jorfernan/issueTracker.git",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^1.19.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0"
+  }
+}
