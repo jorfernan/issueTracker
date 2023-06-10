@@ -150,7 +150,7 @@ const server = new ApolloServer({
 const app = express();
 
 
-server.applyMiddleware({ app, path: "/graphql" });
+server.applyMiddleware({ app, path: "/" });
 
 (async function () {
   try {
