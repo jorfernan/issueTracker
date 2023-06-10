@@ -18,6 +18,7 @@ const DB_NAME = process.env.DB_NAME;
 const DB_COLLECTION = process.env.DB_COLLECTION;
 const DB_CLUSTER = process.env.DB_CLUSTER;
 const DB_COLLECTION_COUNTERS = process.env.DB_COLLECTION_COUNTERS;
+const SERVER_PORT_API = process.env.SERVER_PORT_API || 3000;
 
 url = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_CLUSTER}/`;
 let db;
@@ -154,8 +155,8 @@ server.applyMiddleware({ app, path: "/graphql" });
 (async function () {
   try {
     await connectToDb();
-    app.listen(3000, function () {
-      console.log("API server started on port 3000");
+    app.listen(SERVER_PORT_API, function () {
+      console.log(`API server started on port ${SERVER_PORT_API}`);
     });
   } catch (err) {
     console.log("Error: ", err);
