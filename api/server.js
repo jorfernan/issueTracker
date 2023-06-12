@@ -8,7 +8,7 @@ const { MongoClient } = require('mongodb');
 
 const path = require('path');
 
-const GraphQLDate = require('graphql_date.js');
+const GraphQLDate = require('./graphql_date');
 
 let aboutMessage = 'Issue Tracker API v1.0';
 
@@ -29,7 +29,7 @@ const url = `mongodb+srv://${DB_USER}:${DB_USER_PASSWD}@${DB_CLUSTER}/`;
 let db;
 
 async function connectToDb() {
-  console.log(url)
+  console.log(url);
   const client = new MongoClient(url, { useNewUrlParser: true });
   await client.connect();
   console.log('Connected to MongoDB at', DB_CLUSTER);
