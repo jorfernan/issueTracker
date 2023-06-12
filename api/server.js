@@ -10,7 +10,7 @@ const path = require('path');
 
 const GraphQLDate = require('./graphql_date');
 
-let aboutMessage = 'Issue Tracker API v1.0';
+const about = require('./about');
 
 const envPath = path.resolve(__dirname, '../.env');
 require('dotenv').config({ path: envPath });
@@ -36,10 +36,6 @@ async function connectToDb() {
   db = client.db(DB_NAME);
 }
 
-function setAboutMessage(_, { message }) {
-  aboutMessage = message;
-  return aboutMessage;
-}
 
 function issueValidate(issue) {
   // Holds error messages of failed validations
@@ -111,11 +107,11 @@ async function issueList() {
 
 const resolvers = {
   Query: {
-    about: () => aboutMessage,
+    about: about.getMessage,
     issueList,
   },
   Mutation: {
-    setAboutMessage,
+    setAboutMessage: about.setMessage,
     issueAdd,
   },
   GraphQLDate,
