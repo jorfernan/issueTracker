@@ -1,10 +1,14 @@
 const express = require('express');
+
 const { ApolloServer, UserInputError } = require('apollo-server-express');
+
 const fs = require('fs');
-const { GraphQLScalarType } = require('graphql');
-const { Kind } = require('graphql/language');
+
 const { MongoClient } = require('mongodb');
+
 const path = require('path');
+
+const GraphQLDate = require('graphql_date.js');
 
 let aboutMessage = 'Issue Tracker API v1.0';
 
@@ -31,28 +35,6 @@ async function connectToDb() {
   console.log('Connected to MongoDB at', DB_CLUSTER);
   db = client.db(DB_NAME);
 }
-
-const GraphQLDate = new GraphQLScalarType({
-  name: 'GraphQLDate',
-  description: 'A Date() type in GraphQL as a scalar',
-
-  // Convert a Date to a String.
-  serialize(value) {
-    return value.toISOString();
-  },
-  parseValue(value) {
-    // Catch invalid date strings
-    const dateValue = new Date(value);
-    return Number.isNaN(dateValue.getTime()) ? undefined : dateValue;
-  },
-  parseLiteral(ast) {
-    if (ast.kind === Kind.STRING) {
-      const value = new Date(ast.value);
-      return Number.isNaN(value.getTime()) ? undefined : value;
-    }
-    return undefined;
-  },
-});
 
 function setAboutMessage(_, { message }) {
   aboutMessage = message;
