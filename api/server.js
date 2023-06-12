@@ -13,7 +13,7 @@ require('dotenv').config({ path: envPath });
 
 const {
   DB_USER,
-  DB_USER_PASSWORD,
+  DB_USER_PASSWD,
   DB_NAME,
   DB_COLLECTION,
   DB_CLUSTER,
@@ -21,10 +21,11 @@ const {
   SERVER_PORT_API,
 } = process.env;
 
-const url = `mongodb+srv://${DB_USER}:${DB_USER_PASSWORD}@${DB_CLUSTER}/`;
+const url = `mongodb+srv://${DB_USER}:${DB_USER_PASSWD}@${DB_CLUSTER}/`;
 let db;
 
 async function connectToDb() {
+  console.log(url)
   const client = new MongoClient(url, { useNewUrlParser: true });
   await client.connect();
   console.log('Connected to MongoDB at', DB_CLUSTER);
