@@ -4,3 +4,4 @@ api/node_modules
 ui/node_modules
 ui/public/graphQLFetch.js
 ui/public/app.bundle.js
+ui/public/vendor.bundle.js
