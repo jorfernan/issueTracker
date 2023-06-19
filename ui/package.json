@@ -18,10 +18,15 @@
   "license": "ISC",
   "homepage": "https://github.com/jorfernan/issueTracker.git",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "http-proxy-middleware": "^0.21.0",
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "prop-types": "^15.8.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "whatwg-fetch": "^3.6.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
