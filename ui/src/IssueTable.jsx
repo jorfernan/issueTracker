@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function IssueRow({ issue }) {
   const {
@@ -19,7 +20,7 @@ function IssueRow({ issue }) {
       <td>{effort}</td>
       <td>{due ? due.toDateString() : ''}</td>
       <td>{title}</td>
-      <td><a href={`/#/edit/${issue.id}`}>Edit</a></td>
+      <td><Link to={`/edit/${issue.id}`}>Edit</Link></td>
     </tr>
   );
 }
