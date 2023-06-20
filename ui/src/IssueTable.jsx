@@ -19,6 +19,7 @@ function IssueRow({ issue }) {
       <td>{effort}</td>
       <td>{due ? due.toDateString() : ''}</td>
       <td>{title}</td>
+      <td><a href={`/#/edit/${issue.id}`}>Edit</a></td>
     </tr>
   );
 }
@@ -38,6 +39,7 @@ export default function IssueTable({ issues }) {
           <th>Effort</th>
           <th>Due Date</th>
           <th>Title</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>{issueRows}</tbody>
