@@ -1,11 +1,10 @@
 /* eslint "react/prefer-stateless-function": "off" */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
 class IssueFilter extends React.Component {
-
   constructor() {
     super();
     this.onChangeStatus = this.onChangeStatus.bind(this);

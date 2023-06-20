@@ -2,8 +2,7 @@ import React from 'react';
 import { Link, NavLink, withRouter } from 'react-router-dom';
 
 
-
-const IssueRow = withRouter(({issue,location: {search}}) => {
+const IssueRow = withRouter(({ issue, location: { search } }) => {
   const selectLocation = { pathname: `/issues/${issue.id}`, search };
   const {
     id,

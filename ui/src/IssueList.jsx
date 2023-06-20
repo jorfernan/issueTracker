@@ -32,7 +32,6 @@ export default class IssueList extends React.Component {
     const params = new URLSearchParams(search);
     const vars = {};
     if (params.get('status')) vars.status = params.get('status');
-    
     const query = `query issueList($status: StatusType) {
       issueList (status: $status) {
       id title status owner
@@ -40,7 +39,7 @@ export default class IssueList extends React.Component {
       }
     }`;
 
-    const data = await graphQLFetch(query,vars);
+    const data = await graphQLFetch(query, vars);
     if (data) {
       this.setState({ issues: data.issueList });
       // console.log("Data loaded");

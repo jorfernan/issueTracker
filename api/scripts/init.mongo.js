@@ -36,7 +36,7 @@ async function initializeDB() {
         + '\n   Warning: Hash history cannot PUSH the same path; a new entry'
         + '\n   will not be added to the history stack'
         + '\n4. Click on Add.'
-        + '\n5. There is an error in console, and add doen\'t work.'
+        + '\n5. There is an error in console, and add doen\'t work.',
     },
     {
       id: 2,
