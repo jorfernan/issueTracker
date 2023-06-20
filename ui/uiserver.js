@@ -45,6 +45,10 @@ app.get('/env.js', (req, res) => {
   res.send(`window.ENV = ${JSON.stringify(env)}`);
 });
 
+app.get('*',(req,res) => {
+  res.sendFile(path.resolve('public/index.html'));
+});
+
 const SERVER_PORT_UI = process.env.SERVER_PORT_UI || 8000;
 
 app.listen(8000, () => {
