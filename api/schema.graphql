@@ -22,7 +22,7 @@ type Issue {
 
 type Query {
     about: String!
-    issueList: [Issue!]!
+    issueList(status: StatusType): [Issue!]!
 }
 
 "Toned down Issue, used as inputs, without server generated values."

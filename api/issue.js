@@ -11,9 +11,11 @@ const {
   DB_COLLECTION,
 } = process.env;
 
-async function list() {
+async function list(_, { status }) {
   const db = getDb();
-  const issues = await db.collection(DB_COLLECTION).find({}).toArray();
+  const filter = {};
+  if (status) filter.status = status;
+  const issues = await db.collection(DB_COLLECTION).find(filter).toArray();
   return issues;
   // If there are thousands of documents
   /*
