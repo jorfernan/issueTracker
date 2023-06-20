@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 
-function IssueRow({ issue }) {
+
+
+const IssueRow = withRouter(({issue,location: {search}}) => {
+  const selectLocation = { pathname: `/issues/${issue.id}`, search };
   const {
     id,
     status,
@@ -20,10 +23,14 @@ function IssueRow({ issue }) {
       <td>{effort}</td>
       <td>{due ? due.toDateString() : ''}</td>
       <td>{title}</td>
-      <td><Link to={`/edit/${issue.id}`}>Edit</Link></td>
+      <td>
+        <Link to={`/edit/${issue.id}`}>Edit</Link>
+        {' | '}
+        <NavLink to={selectLocation}>Select</NavLink>
+      </td>
     </tr>
   );
-}
+});
 
 export default function IssueTable({ issues }) {
   const issueRows = issues.map(issue => (

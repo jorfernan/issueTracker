@@ -29,6 +29,14 @@ async function initializeDB() {
       created: new Date('2018-08-15'),
       due: undefined,
       title: 'Error in console when clicking Add',
+      description: 'Steps to recreate the problem:'
+        + '\n1. Refresh the browser'
+        + '\n2. Select "New" in the filter'
+        + '\n3. Refresh the broser again. Note the warning in console:'
+        + '\n   Warning: Hash history cannot PUSH the same path; a new entry'
+        + '\n   will not be added to the history stack'
+        + '\n4. Click on Add.'
+        + '\n5. There is an error in console, and add doen\'t work.'
     },
     {
       id: 2,
@@ -38,6 +46,8 @@ async function initializeDB() {
       created: new Date('2018-08-16'),
       due: new Date('2018-08-30'),
       title: 'Missing bottom border on panel',
+      description: 'There needs to be a border in the bottom of the panel'
+        + ' that appears when clicking on Add.',
     },
     {
       id: 3,
@@ -47,6 +57,7 @@ async function initializeDB() {
       created: new Date('2018-08-12'),
       due: new Date('2018-08-22'),
       title: 'Database collection testing',
+      description: 'Inserting new field description to the schema',
     },
   ];
 
